@@ -3,7 +3,7 @@
 #include<cstring>
 #include<cstdlib>
 #include<cmath>
-#define INF 999999
+#define INF 9999
 void printSolution(long int dist[][200],long int n1);
 void floydWarshall (long int graph[][200],long int n2)
 {
@@ -41,7 +41,7 @@ void printSolution(long int dist[][200],long int n3)
     {
         for (int j = 0; j < n3; j++)
         {
-            if (dist[i][j] == 999999)
+            if (dist[i][j] == 9999)
                 printf("%7s", "INF");
             else
                 printf ("%7ld", dist[i][j]);
@@ -52,12 +52,13 @@ void printSolution(long int dist[][200],long int n3)
 
 int main()
 {
-     std::ifstream fp("input.txt");
+     std::ifstream fp("input1.txt");
     long int graph[200][200],n;
     fp >> n;
     for(int i=0;i<n;i++)
         for(int j=0;j<n;j++)
-        fp >> graph[i][j];
+        {fp >> graph[i][j];
+        }
         
        floydWarshall(graph,n);
     return 0;
